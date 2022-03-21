@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello World Example</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+</head>
+<body>
+<div th:if="${item != null}">
+    <h1 th:text="${item.getTitle()}"></h1>
+    <p th:text="${item.getText()}"></p>
+</div>
+<div th:if="${item == null}">
+    <h1>This item doesn't exists</h1>
+</div>
+<a th:href="'/'"><-- Go Back</a>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello World</title>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+</head>
+<body>
+<h1>Hey!</h1>
+<p>Welcome to our Site</p>
+<ul th:each="item: ${items}">
+    <li><a th:href="'item/' + ${item.getId()}" th:text="${item.getTitle()}"></a></li>
+</ul>
+</body>
+</html>
