@@ -6,9 +6,42 @@
 </head>
 <body>
 <h1>Hey!</h1>
-<p>Welcome to our Site</p>
-<ul th:each="item: ${items}">
-    <li><a th:href="'item/' + ${item.getId()}" th:text="${item.getTitle()}"></a></li>
-</ul>
+<h2>Welcome to our Site</h2>
+<div class="flex-container">
+    <div>
+        <h3>Item List</h3>
+        <ul th:each="item: ${items}">
+            <li><a th:href="'item/' + ${item.getId()}" th:text="${item.getTitle()}"></a></li>
+        </ul>
+    </div>
+    <div class="flex"
+         th:style="${'background-color: rgb(' + color.getR() + ',' + color.getG() + ',' + color.getB() + ')'}">
+        <h3>Statistics</h3>
+        <p th:text="'views: ' + ${stats.getViews()}"></p>
+        <span>Current Users:
+        <p th:each="user : ${user_list.getUsers()}">
+            <a th:text="${user.toString()}"></a>
+        </p>
+        </span>
+
+    </div>
+</div>
 </body>
 </html>
+<style>
+    body {
+        margin: 30px;
+    }
+
+    .flex-container {
+        display: flex;
+    }
+
+    .flex-container > div {
+        border: solid black;
+        padding-bottom: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 10px;
+    }
+</style>
