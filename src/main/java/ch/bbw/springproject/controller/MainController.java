@@ -26,10 +26,6 @@ public class MainController {
         itemList.add(item2);
     }
 
-    @PreDestroy
-    public void destroyItemList() {
-        itemList.clear();
-    }
 
     @RequestMapping("/")
     public String index(Model model) {
